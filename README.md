@@ -1,51 +1,61 @@
-Raktadaan: Blood Bank Management System
-Overview
-
-Raktadaan is a comprehensive web application developed using Django, aimed at streamlining blood donation activities, donor and patient management, and administrative tasks within blood banks or healthcare facilities.
-Features
-
-    User Roles: Raktadaan supports three user roles:
-        Donor: Individuals interested in donating blood can register, view their donation history, and update their profile information.
-        Patient: Patients in need of blood can search for donors based on blood type and availability.
-        Admin: Administrators have full access to system features, including managing donors, patients, blood inventory, and user accounts.
-
-    Donor Management: Donors can register, update their contact details, view donation history, and receive notifications about upcoming donation events.
-
-    Patient Management: Patients can search for blood donors based on specific criteria such as blood type, location, and availability. They can also request blood donations and track donation statuses.
-
-    Blood Inventory Management: Admins can manage the blood inventory, including adding new donations, updating availability status, and monitoring expiration dates.
-
-    Appointment Scheduling: Donors can schedule appointments for blood donations, and admins can manage and track donation appointments.
-
-    Notifications: Donors and patients receive notifications about donation events, appointment reminders, and updates on donation requests.
-
-Installation
-
-    Clone the repository:
-
-    bash
-
-git clone https://github.com/your/repository.git
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Run migrations:
-
-python manage.py migrate
-
-Start the development server:
-
-    python manage.py runserver
-
-    Access the application at http://localhost:8000 in your web browser.
+# Raktadaan: Blood Bank Management System
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Gaurav-red)
+---
 
 
+## Functions
 
-Usage
+### Admin
+- Create Admin account using the following command
 
-    User Registration/Login: Users can register for a new account or log in with existing credentials based on their role (donor, patient, or admin).
-    Donor Actions: Donors can do donate blood request, view donation history as well as request blood donationa and track both status.
-    Patient Actions: Patients can request blood donations, and track donation statuses.
-    Admin Actions: Admins can manage users, blood inventory, donation appointments,system settings and manage blood unit.
+py manage.py createsuperuser
+
+vbnet
+
+- After login, the admin can see the units of blood for each blood group available, the number of donors, the number of blood requests, the number of approved requests, and the total units of blood on the dashboard.
+- Can view, update, delete donors.
+- Can view, update, delete patients.
+- Can view donation requests made by donors and can approve or reject them based on the donor's disease.
+- If a donation request is approved by the admin, the unit of blood is added to the blood stock of that blood group.
+- If a donation request is rejected by the admin, 0 units of blood are added to the stock.
+- Can view blood requests made by donors/patients and can approve or reject them.
+- If a blood request is approved by the admin, the unit of blood is reduced from the blood stock of that blood group.
+- If a blood request is rejected by the admin, 0 units of blood are reduced from the stock.
+- Can see the history of blood requests.
+- Can update the unit of a particular blood group.
+
+### Donor
+- Donors can create an account by providing basic details.
+- After login, donors can donate blood, and after approval from the admin, the blood will be added to the blood stock.
+- Donors can see their donation history with status (Pending, Approved, Rejected).
+- Donors can also request blood from the blood stock.
+- Donors can see their blood request history with status.
+- Donors can see the number of blood requests made, approved, pending, and rejected by the admin on their dashboard.
+> **_NOTE:_**  Donors can donate blood and can also request blood.
+
+### Patient
+- Patients can create an account (No approval required by the admin, can log in after signup).
+- After login, patients can see the number of blood requests made, approved, pending, and rejected by the admin on their dashboard.
+- Patients can request blood of a specific blood group and unit from the blood stock.
+- Patients can see their blood request history with status (Pending, Approved, Rejected).
+
+---
+
+## HOW TO RUN THIS PROJECT
+- Install Python (Don't forget to tick "Add to Path" while installing Python).
+- Download this project zip folder and extract it.
+- Move to the project folder in Terminal. Then run the following commands:
+
+python -m pip install -r requirements.txt
+
+py manage.py makemigrations
+py manage.py migrate
+py manage.py runserver
+
+- Now enter the following URL in your web browser installed on your PC:
+
+http://127.0.0.1:8000/
+
+
+## Feedback
+Any suggestions and feedback are welcome. You can contact me via email or LinkedIn.
