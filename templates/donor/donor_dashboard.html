@@ -1,0 +1,103 @@
+{% extends 'donor/donorbase.html' %}
+{% block content %}
+<br><br>
+<div class="container">
+
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="card blood-type-card">
+          <div class="card-body">
+              <div class="blood">
+                <i class="fas fa-sync-alt xyz" style="font-size: 24px;"></i>
+              </div>
+              <div class="unit-info" style="color: #4caf50; font-size: 18px;">
+                Request Made <br>
+                  {{requestmade}}
+              </div>                            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card blood-type-card">
+            <div class="card-body">
+                <div class="blood">
+                  <i class="fas fa-sync xyz" style="font-size: 24px;"></i>
+                </div>
+                <div class="unit-info" style="color: #4caf50; font-size: 18px;">
+                    Pending Request <br>
+                    {{requestpending}}
+                </div>                            
+            </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="card blood-type-card">
+              <div class="card-body">
+                  <div class="blood">
+                    <i class="fas fa-check-circle xyz" style="font-size: 24px;"></i>
+                  </div>
+                  <div class="unit-info" style="color: #4caf50; font-size: 18px;">
+                       Approved Request<br>
+                      {{requestapproved}}
+                  </div>                            
+              </div>
+            </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="card blood-type-card">
+              <div class="card-body">
+                  <div class="blood">
+                    <i class="fas fa-times-circle xyz" style="font-size: 24px;"></i>
+                  </div>
+                  <div class="unit-info" style="color: #4caf50; font-size: 18px;">
+                       Rejected Request <br>
+                      {{requestrejected}}
+                  </div>                            
+              </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<style>
+/* Custom Styles */
+
+.blood-type-card {
+    margin-bottom: 20px;
+}
+
+.blood-type-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blood-type-card .card-body {
+    text-align: center;
+}
+
+.blood {
+    margin-bottom: 10px;
+}
+
+.unit-info {
+    font-size: 18px;
+    color: #4caf50; /* Green color */
+}
+
+hr {
+    border-top: 2px solid #f0f0f0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+</style>
+
+
+{% endblock content %}

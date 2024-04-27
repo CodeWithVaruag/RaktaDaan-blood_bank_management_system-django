@@ -1,0 +1,178 @@
+{% extends 'blood/adminbase.html' %}
+
+{% block content %}
+<br><br>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-3">
+          <div class="card blood-type-card">
+            <div class="card-body">
+                <div class="blood-type">
+                    <h2>A+ <i class="fas fa-tint"></i></h2>
+                </div><br>
+                <div class="unit-info">
+                    {{ A1.unit }} Units Available
+                </div>                            
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card blood-type-card">
+                <div class="card-body">
+                    <div class="blood-type">
+                        <h2>B+ <i class="fas fa-tint"></i></h2>
+                    </div><br>
+                    <div class="unit-info">
+                        {{ B1.unit }} Units Available
+                    </div>                            
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card blood-type-card">
+                <div class="card-body">
+                    <div class="blood-type">
+                        <h2>O+ <i class="fas fa-tint"></i></h2>
+                    </div><br>
+                    <div class="unit-info">
+                        {{ O1.unit }} Units Available
+                    </div>                            
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card blood-type-card">
+                <div class="card-body">
+                    <div class="blood-type">
+                        <h2>AB+ <i class="fas fa-tint"></i></h2>
+                    </div><br>
+                    <div class="unit-info">
+                        {{ AB1.unit }} Units Available
+                    </div>                            
+                </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card blood-type-card">
+            <div class="card-body">
+                <div class="blood-type">
+                    <h2>A- <i class="fas fa-tint"></i></h2>
+                </div><br>
+                <div class="unit-info">
+                    {{ A2.unit }} Units Available
+                </div>                            
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card blood-type-card">
+                <div class="card-body">
+                    <div class="blood-type">
+                        <h2>B- <i class="fas fa-tint"></i></h2>
+                    </div><br>
+                    <div class="unit-info">
+                        {{ B2.unit }} Units Available
+                    </div>                            
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card blood-type-card">
+                <div class="card-body">
+                    <div class="blood-type">
+                        <h2>O- <i class="fas fa-tint"></i></h2>
+                    </div><br>
+                    <div class="unit-info">
+                        {{ O2.unit }} Units Available
+                    </div>                            
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card blood-type-card">
+                <div class="card-body">
+                    <div class="blood-type">
+                        <h2>AB- <i class="fas fa-tint"></i></h2>
+                    </div><br>
+                    <div class="unit-info">
+                        {{ AB2.unit }} Units Available
+                    </div>                            
+                </div>
+              </div>
+          </div>
+      </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="text-center">Update Blood Unit</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline custom-form" method="POST">
+                {% csrf_token %}
+                <div class="form-group mx-sm-3 mb-6">
+                    <select name="bloodgroup" class="form-control">
+                        <option disabled="disabled" selected="selected">Choose Blood Group</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                    </select>
+                </div>
+                <div class="form-group mx-sm-3 mb-6">
+                    <input type="number" class="form-control" name="unit" placeholder="Unit">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Update</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<style>/* Custom Styles */
+
+    .blood-type-card, .statistics-card {
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .blood-type-card .card-body, .statistics-card .card-body {
+        text-align: center;
+    }
+    
+    .blood-type {
+        font-size: 24px;
+        color: #ff5252; /* Red color */
+    }
+    
+    .unit-info, .statistics-info {
+        font-size: 18px;
+        color: #4caf50; /* Green color */
+    }
+    
+    .statistics-icon {
+        font-size: 36px;
+        color: #2196f3; /* Blue color */
+    }
+    
+    .custom-form button {
+        margin-top: 10px;
+    }
+
+    </style>
+
+{% endblock content %}
